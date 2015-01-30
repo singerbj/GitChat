@@ -1,6 +1,6 @@
 var comm = new Icecomm('NPxgHL3vfw3Lq7wchKeWZaYm056GAZo8rZjFKXcynTZNzVHhi');
 
-comm.connect('custom room', {audio: false});
+comm.connect('custom room', {audio: true});
 
 comm.on('connected', function(options) {
   console.log(options);
