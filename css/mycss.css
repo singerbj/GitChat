@@ -1,0 +1,30 @@
+#localVideo{ 
+	background: red;
+	position: fixed;
+	max-width: 265px;
+	height: 20%;
+	top: calc(100% - 20% - 15px);
+	left: calc(100% - 280px);
+}
+
+body {
+    padding: 1em;
+}
+
+.row-fluid {
+    margin: 1em 0;
+    width: auto;
+}
+.row-fluid a {
+  display: block;
+    background-color: #eee;
+  text-align: center;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  min-height: 40px;
+  line-height: 40px;
+    
+
+    
+}
