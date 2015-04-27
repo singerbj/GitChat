@@ -1,5 +1,5 @@
 
-var comm = new Icecomm('NPxgHL3vfw3Lq7wchKeWZaYm056GAZo8rZjFKXcynTZNzVHhi');
+var comm = new Icecomm('OEPs1Gvg8qHtrE8q3OniMGdYUxqScxZ5gXbE7lHr4guAugJk');
 comm.connect('customroom123', {audio: true});
 
 var z  = 10;
