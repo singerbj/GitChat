@@ -1,24 +1,34 @@
-<html>
+<!doctype html>
+<html ng-app="GitChat">
   <head>
     <title>GitChat</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/mycss.css">
   </head>
-  <body>
-    <div id="container"></div>
+  <body ng-controller="ChatController as cc" ng-cloak>
+    <div id="container">
+        <div class="resizeDiv" id="{{ peer.callerID }}" ng-repeat="peer in cc.peers">
+            <video ng-repeat="peer in cc.peers" src="{{ peer.stream | trustUrl }}" autoplay="" id="{{ peer.callerID }}"></video>
+        </div>
+    </div>
     <div id="chat">
       <div id="feed">
+          <div ng-repeat="msg in cc.messages">
+              <b>{{ msg.name }}</b>
+              <br>
+              {{ msg.msg }}
+              <hr>
+          </div>
       </div>
-      <input id="name" placeholder="Enter your name..."></input>
+      <input id="name" placeholder="Enter your name..." ng-model="cc.name"></input>
       <div id="input">
-        <textarea placeholder="Write your message here..."></textarea>
+        <textarea placeholder="Write your message here..." ng-enter="console.log('hello'); cc.sendMessage()" ng-model="cc.message"></textarea>
       </div>
     </div>
     <video id="localVideo" autoplay></video>
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js"></script>
     <script type="text/javascript" src="js/Autolinker.min.js"></script>
-    <script type="text/javascript" src="js/draggabilly.js"></script>
-    <!--<script type="text/javascript" src="js/icecomm.js"></script>-->
     <script type="text/javascript" src="http://cdn.icecomm.io/icecomm.js"></script>
     <script type="text/javascript" src="js/myjs.js"></script>
   </body>
